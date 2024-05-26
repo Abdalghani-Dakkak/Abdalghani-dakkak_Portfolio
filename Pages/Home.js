@@ -11,15 +11,12 @@ import {
   faJs,
   faLinkedin,
   faReact,
-  faSquareBehance,
   faSquareFacebook,
   faSquareGithub,
   faSquareInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import Card from "../Components/Card";
 import { useEffect } from "react";
-
-// import myCV from "../assets/My CV.docx";
+import Card from "../Components/Card";
 
 export default function Home() {
   // Vars
@@ -588,6 +585,18 @@ export default function Home() {
         card.style.setProperty("--mouse-y", `${y}px`);
       }
     };
+
+    // using Java Script method to get PDF file
+    fetch("Abdalghani_CV.pdf").then((response) => {
+      response.blob().then((blob) => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(blob);
+
+        // Setting various property values
+        document.querySelector(".download-cv").href = fileURL;
+        document.querySelector(".download-cv").download = "Abdalghani_CV.pdf";
+      });
+    });
   }, []);
 
   // Return
@@ -720,16 +729,6 @@ export default function Home() {
             </li>
             <li>
               <a
-                href="https://www.behance.net/abdalghanidakkak/moodboards"
-                target="_blank"
-                className="behance"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon icon={faSquareBehance} />
-              </a>
-            </li>
-            <li>
-              <a
                 href="https://github.com/Abdalghani-Dakkak?tab=repositories"
                 target="_blank"
                 className="github"
@@ -795,13 +794,14 @@ export default function Home() {
               tools="HTML + CSS + JS + Bootstrap + React + Redux"
               link="https://giga-chat.surge.sh/"
             />
-            {/* <Card
-              workName="Order Time"
-              img={require("../assets/images/order-time.png")}
-              desc="Landing page"
-              tools="HTML + CSS + JS + Bootstrap"
-              link="https://abdalghani-dakkak.github.io/order-time/"
-            /> */}
+            <Card
+              workName="Whatsapp"
+              img={require("../assets/images/whatsapp.png")}
+              width={"35%"}
+              desc="Chating website (Mobile Version)"
+              tools="HTML + CSS + JS"
+              link="https://abdalghani-dakkak.github.io/Whatsapp/"
+            />
           </div>
         </section>
         {/* End Works Section */}
@@ -854,6 +854,21 @@ export default function Home() {
                 data-value="100"
               ></div>
             </li>
+            {/* <li className="skill">
+              <h3>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                  <path
+                    d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
+                  />
+                </svg>
+                Tailwind
+              </h3>
+              <div
+                className="skill-progress"
+                style={{ "--i": 100 }}
+                data-value="100"
+              ></div>
+            </li> */}
             <li className="skill">
               <h3>
                 <FontAwesomeIcon icon={faReact} />
@@ -889,7 +904,8 @@ export default function Home() {
                 Contact
                 <FontAwesomeIcon icon={faEnvelope} bounce />
               </a>
-              <a href="../assets/Abdalghani-CV.pdf" className="download-cv" download>
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a className="download-cv">
                 Download CV
                 <FontAwesomeIcon icon={faFile} bounce />
               </a>
@@ -917,22 +933,12 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/abdalghani-dakkak-77705324a/"
+                  href="https://www.linkedin.com/in/abdalghani-dakkak/"
                   target="_blank"
                   className="linkedin"
                   rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.behance.net/abdalghanidakkak/moodboards"
-                  target="_blank"
-                  className="behance"
-                  rel="noreferrer"
-                >
-                  <FontAwesomeIcon icon={faSquareBehance} />
                 </a>
               </li>
               <li>

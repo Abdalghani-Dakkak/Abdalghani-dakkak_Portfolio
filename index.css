@@ -959,14 +959,12 @@ header {
   border: 2px solid #fff;
   border-radius: 5px;
   padding: 10px 20px;
+  margin-inline-end: 20px;
+  margin-bottom: 10px;
 }
 
 .portfolio-section footer .media .contact-and-cv a svg {
   margin-inline-start: 8px;
-}
-
-.portfolio-section footer .media .contact-and-cv .download-cv {
-  margin-inline-start: 20px;
 }
 
 .portfolio-section footer .media ul {

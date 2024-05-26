@@ -6,7 +6,7 @@ export default function Card(props) {
     <div className="card">
       <h2 className="work-name">{props.workName}</h2>
       <div className="work-img">
-        <img src={props.img} />
+        <img style={{width: props.width}} src={props.img} alt="" />
       </div>
       <p className="work-desc">
         <span>Descripton:</span> {props.desc}
